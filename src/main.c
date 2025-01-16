@@ -16,16 +16,21 @@ int main(int argc, char **argv) {
 
   if (strcmp(argv[1], "--help") == 0) {
     lOpt_help(argv);
+
   } else if (strcmp(argv[1], "--version") == 0) {
     lOpt_version(argv);
+
   } else if (strcmp(argv[1], "c") == 0) {
     //t_cLanguage(argv);
+    
   } else if (strcmp(argv[1], "web") == 0) {
     //t_web(argv);
+    
   } else if (strcmp(argv[1], "java") == 0) {
     //t_java(argv);
+
   } else {
-    printf(RED "ERROR:" RESET " Incorrect argument/s.\n");
+    printf(RED "ERROR:" RESET " Invalid argument/s.\n");
     printf("For help, run \"" YELLOW "qset --help" RESET "\".\n");
   }
 
