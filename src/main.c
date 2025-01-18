@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     lOpt_version(argv);
 
   } else if (strcmp(argv[1], "c") == 0) {
-    //t_cLanguage(argv);
+    t_cLanguage(argv);
     
   } else if (strcmp(argv[1], "web") == 0) {
     //t_web(argv);

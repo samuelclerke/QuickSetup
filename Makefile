@@ -1,7 +1,5 @@
 CC = gcc
 CFLAGS = -Iinclude
 
-all: program
-
-program: src/main.c
+program: src/main.c src/LongOpt.c
 	$(CC) $(CFLAGS) src/main.c src/LongOpt.c -o qset
