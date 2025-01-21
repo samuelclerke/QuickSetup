@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 #include "ProgSet.h"
-#include "LongOpt.h"
-#include "string.h"
+#include "Options.h"
+
+#include "Options.c"
+#include "Templates.c"
 
 int main(int argc, char **argv) {
 
@@ -9,26 +12,19 @@ int main(int argc, char **argv) {
     printf("Welcome to Quick Setup (QSET).\n");
     printf("For help, run \"" YELLOW "qset --help" RESET "\".\n");
     return 0;
-  } else if (argc > 3) {
+  } else if (argc > 4) {
     printf(RED "ERROR:" RESET " TOO MANY ARGUMENTS.\n");
     return 0;
   }
 
-  if (strcmp(argv[1], "--help") == 0) {
-    lOpt_help(argv);
+  if (strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
+    _help(argc, argv);
 
-  } else if (strcmp(argv[1], "--version") == 0) {
-    lOpt_version(argv);
+  } else if (strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0) {
+    _version(argv);
 
-  } else if (strcmp(argv[1], "c") == 0) {
-    t_cLanguage(argv);
-    
-  } else if (strcmp(argv[1], "web") == 0) {
-    //t_web(argv);
-    
-  } else if (strcmp(argv[1], "java") == 0) {
-    //t_java(argv);
-
+  } else if (strcmp(argv[1], "--create") == 0 || strcmp(argv[1], "-c") == 0) {
+    _create(argc, argv);
   } else {
     printf(RED "ERROR:" RESET " Invalid argument/s.\n");
     printf("For help, run \"" YELLOW "qset --help" RESET "\".\n");
